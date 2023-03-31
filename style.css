@@ -22,15 +22,23 @@ main {
     display: none;
     position: absolute;
     z-index: 1;
-    min-width: 160px;
+    min-width: 300px;
 }
 
 .dropdown-btn {
     background-color: black;
     color: antiquewhite;
     font-size: xx-large;
+    width: 300px;
 }
 
 .dropdown:hover .dropdown-items {display: block;}
 .dropdown:hover .dropdown-btn {background-color: darkgray;}
 .dropdown-items a:hover {background-color: darkgray;}
+
+.cantrips, .spells{
+    border: solid black 5px;
+    height: fit-content;
+    width: 300px;
+    padding: 16px;
+}

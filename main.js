@@ -104,12 +104,27 @@ const character = {
     }
 }
 
+const spellName = document.querySelectorAll('.spell-name')
+const castingTime = document.querySelectorAll('.casting-time')
+const range = document.querySelectorAll('.range')
+const components = document.querySelectorAll('.components')
+const duration = document.querySelectorAll('.duration')
+const description = document.querySelectorAll('.description')
+
 const dropdownItems = document.querySelector('.dropdown-items')
 
 for (let i = 0; i < cantrips.length; i++) {
     let a = document.createElement('a')
     a.classList.add(`cantrip-${i}`)
     a.textContent = cantrips[i].name
+    a.addEventListener('click', (e) => {
+        spellName[0].textContent = cantrips[i].name
+        castingTime[0].textContent = `Casting time: ${cantrips[i].castingTime}`
+        range[0].textContent = `Range: ${cantrips[i].range}`
+        components[0].textContent = `Components: ${cantrips[i].components}`
+        duration[0].textContent = `Duration: ${cantrips[i].duration}`
+        description[0].textContent = cantrips[i].description
+    })
     dropdownItems.appendChild(a)
 }
 
@@ -119,5 +134,13 @@ for (let i = 0; i < spells.length; i++) {
     let a = document.createElement('a')
     a.classList.add(`spell-${i}`)
     a.textContent = spells[i].name
+    a.addEventListener('click', (e) => {
+        spellName[1].textContent = spells[i].name
+        castingTime[1].textContent = `Casting time: ${spells[i].castingTime}`
+        range[1].textContent = `Range: ${spells[i].range}`
+        components[1].textContent = `Components: ${spells[i].components}`
+        duration[1].textContent = `Duration: ${spells[i].duration}`
+        description[1].textContent = spells[i].description
+    })
     spellDropdownItems.appendChild(a) 
 }
