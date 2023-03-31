@@ -112,3 +112,12 @@ for (let i = 0; i < cantrips.length; i++) {
     a.textContent = cantrips[i].name
     dropdownItems.appendChild(a)
 }
+
+const spellDropdownItems = document.querySelectorAll('.dropdown-items')[1]
+
+for (let i = 0; i < spells.length; i++) {
+    let a = document.createElement('a')
+    a.classList.add(`spell-${i}`)
+    a.textContent = spells[i].name
+    spellDropdownItems.appendChild(a) 
+}
