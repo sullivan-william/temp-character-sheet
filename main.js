@@ -112,6 +112,18 @@ const character = {
     ]
 }
 
+let hp = character.maxHP
+let bonusHP = 0
+
+const maxHP = document.querySelector('.max-hp')
+const currentHP = document.querySelector('.current-hp')
+const tempHP = document.querySelector('.temp-hp')
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
+const tempUp = document.querySelector('.temp-up')
+const tempDown = document.querySelector('.temp-down')
+
+
 const dropdownBtn = document.querySelectorAll('.dropdown-btn')
 const spellName = document.querySelectorAll('.spell-name')
 const castingTime = document.querySelectorAll('.casting-time')
@@ -153,7 +165,7 @@ for (let i = 0; i < spells.length; i++) {
         duration[1].textContent = `Duration: ${spells[i].duration}`
         description[1].textContent = spells[i].description
     })
-    spellDropdownItems.appendChild(a) 
+    spellDropdownItems.appendChild(a)
 }
 
 dropdownBtn[0].addEventListener('click', (e) => {
@@ -186,4 +198,41 @@ character.attributes.forEach(attribute => {
         h4.textContent = `Modifier: + ${attribute.mod}`
     }
     currentAttribute.appendChild(h4)
+})
+
+maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
+currentHP.textContent = `Current HP: ${hp}`
+tempHP.textContent = `Temporary HP: ${bonusHP}`
+
+
+up.addEventListener('click', (e) => {
+    if (hp >= character.maxHP) {
+        return
+    } else {
+        hp += 1
+        currentHP.textContent = `Current HP: ${hp}`
+    }
+})
+
+down.addEventListener('click', (e) => {
+    if (hp > 0) {
+        hp -= 1
+        currentHP.textContent = `Current HP: ${hp}`
+    } else {
+        return
+    }
+})
+
+tempUp.addEventListener('click', (e) => {
+    bonusHP += 1
+    tempHP.textContent = `Temporary HP: ${bonusHP}`
+})
+
+tempDown.addEventListener('click', (e) => {
+    if (bonusHP > 0) {
+        bonusHP -= 1
+        tempHP.textContent = `Temporary HP: ${bonusHP}`
+    } else {
+        return
+    }
 })

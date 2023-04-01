@@ -43,3 +43,12 @@ main {
     width: 300px;
     padding: 16px;
 }
+
+.increment {
+    display: block;
+}
+
+.increment-container {
+    display: flex;
+    justify-content: space-between;
+}
