@@ -76,32 +76,40 @@ const character = {
     lvl: 4,
     armorClass: 13,
     speed: 30,
-    hpMax: 33,
+    maxHP: 33,
     hd: "1d8",
-    strength: {
-        value: 12,
-        mod: 1
-    },
-    dexterity: {
-        value: 12,
-        mod: 1
-    },
-    constitution: {
-        value: 17,
-        mod: 3
-    },
-    intelligence: {
-        value: 12,
-        mod: 1
-    },
-    wisdom: {
-        value: 6,
-        mod: -2
-    },
-    charisma: {
-        value: 16,
-        mod: 3
-    }
+    attributes: [
+        {
+            title: "strength",
+            value: 12,
+            mod: "1"
+        },
+        {
+            title: "dexterity",
+            value: 12,
+            mod: "1"
+        },
+        {
+            title: "constitution",
+            value: 17,
+            mod: "3"
+        },
+        {
+            title: "intelligence",
+            value: 12,
+            mod: "1"
+        },
+        {
+            title: "wisdom",
+            value: 6,
+            mod: "-2"
+        },
+        {
+            title: "charisma",
+            value: 16,
+            mod: "3"
+        }
+    ]
 }
 
 const dropdownBtn = document.querySelectorAll('.dropdown-btn')
@@ -166,4 +174,16 @@ dropdownBtn[1].addEventListener('click', (e) => {
     components[1].textContent = ''
     duration[1].textContent = ''
     description[1].textContent = ''
+})
+
+character.attributes.forEach(attribute => {
+    let currentAttribute = document.querySelector(`.${attribute.title}`)
+    let h4 = document.createElement('h4')
+    currentAttribute.textContent = `${attribute.title.toUpperCase()}: ${attribute.value}`
+    if (attribute.mod[0] === '-') {
+        h4.textContent = `Modifier: ${attribute.mod}`
+    } else {
+        h4.textContent = `Modifier: + ${attribute.mod}`
+    }
+    currentAttribute.appendChild(h4)
 })

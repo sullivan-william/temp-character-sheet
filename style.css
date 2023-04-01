@@ -16,6 +16,7 @@ main {
     color: white;
     background-color: black;
     font-size: x-large;
+    padding-left: 10px;
 }
 
 .dropdown-items {
