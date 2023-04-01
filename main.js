@@ -112,17 +112,6 @@ const character = {
     ]
 }
 
-let hp = character.maxHP
-let bonusHP = 0
-
-const maxHP = document.querySelector('.max-hp')
-const currentHP = document.querySelector('.current-hp')
-const tempHP = document.querySelector('.temp-hp')
-const up = document.querySelector('.up')
-const down = document.querySelector('.down')
-const tempUp = document.querySelector('.temp-up')
-const tempDown = document.querySelector('.temp-down')
-
 const characterName = document.querySelector('.character-name')
 const race = document.querySelector('.race')
 const characterClass = document.querySelector('.character-class')
@@ -140,6 +129,53 @@ lvl.textContent = `Level: ${character.lvl}`
 armorClass.textContent = `AC: ${character.armorClass}`
 speed.textContent = `Speed: ${character.speed}`
 hitDice.textContent = `Hit Dice: ${character.hd}`
+
+let hp = character.maxHP
+let bonusHP = 0
+
+const maxHP = document.querySelector('.max-hp')
+const currentHP = document.querySelector('.current-hp')
+const tempHP = document.querySelector('.temp-hp')
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
+const tempUp = document.querySelector('.temp-up')
+const tempDown = document.querySelector('.temp-down')
+
+maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
+currentHP.textContent = `Current HP: ${hp}`
+tempHP.textContent = `Temporary HP: ${bonusHP}`
+
+up.addEventListener('click', (e) => {
+    if (hp >= character.maxHP) {
+        return
+    } else {
+        hp += 1
+        currentHP.textContent = `Current HP: ${hp}`
+    }
+})
+
+down.addEventListener('click', (e) => {
+    if (hp > 0) {
+        hp -= 1
+        currentHP.textContent = `Current HP: ${hp}`
+    } else {
+        return
+    }
+})
+
+tempUp.addEventListener('click', (e) => {
+    bonusHP += 1
+    tempHP.textContent = `Temporary HP: ${bonusHP}`
+})
+
+tempDown.addEventListener('click', (e) => {
+    if (bonusHP > 0) {
+        bonusHP -= 1
+        tempHP.textContent = `Temporary HP: ${bonusHP}`
+    } else {
+        return
+    }
+})
 
 const dropdownBtn = document.querySelectorAll('.dropdown-btn')
 const spellName = document.querySelectorAll('.spell-name')
@@ -221,41 +257,4 @@ character.attributes.forEach(attribute => {
         h5.textContent = `+ ${attribute.mod}`
     }
     currentAttribute.appendChild(h5)
-})
-
-maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
-currentHP.textContent = `Current HP: ${hp}`
-tempHP.textContent = `Temporary HP: ${bonusHP}`
-
-
-up.addEventListener('click', (e) => {
-    if (hp >= character.maxHP) {
-        return
-    } else {
-        hp += 1
-        currentHP.textContent = `Current HP: ${hp}`
-    }
-})
-
-down.addEventListener('click', (e) => {
-    if (hp > 0) {
-        hp -= 1
-        currentHP.textContent = `Current HP: ${hp}`
-    } else {
-        return
-    }
-})
-
-tempUp.addEventListener('click', (e) => {
-    bonusHP += 1
-    tempHP.textContent = `Temporary HP: ${bonusHP}`
-})
-
-tempDown.addEventListener('click', (e) => {
-    if (bonusHP > 0) {
-        bonusHP -= 1
-        tempHP.textContent = `Temporary HP: ${bonusHP}`
-    } else {
-        return
-    }
 })

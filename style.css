@@ -1,6 +1,98 @@
+body {
+    background-color: #242423;
+    color: #E8EDDF;
+}
+
 main {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    gap: 8px;
+}
+
+.general > div {
+    display: flex;
     justify-content: space-around;
+    gap: 16px;
+    border: solid black 2px;
+    align-items: center;
+    background-color: #F5CB5C;
+    color: #333533;
+}
+
+.hp {
+    background-color: #94849B;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    color: #333533;
+}
+
+.max-hp {
+    align-self: flex-end;
+    border-bottom: solid #333533 3px;
+    border-left: solid #333533 3px;
+    padding: 16px;
+    margin-top: 0;
+}
+
+.increment {
+    display: block;
+}
+
+.increment-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.attributes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95vw;
+}
+
+.attribute {
+    border: solid #F5CB5C 5px;
+    min-width: fit-content;
+    width: 150px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 20%;
+}
+
+.val,
+.mod {
+    text-align: center;
+}
+
+.mod {
+    border: solid #94849B 5px;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    position: relative;
+    top: 35px;
+    margin: 0;
+}
+
+.val {
+    font-size: xx-large;
+    margin-bottom: 0;
+    margin-top: 20px;
 }
 
 .dropdown {
@@ -13,10 +105,10 @@ main {
 
 .dropdown-items > a {
     text-decoration: none;
-    color: white;
-    background-color: black;
+    background-color: #333533;
     font-size: x-large;
     padding-left: 10px;
+    color: #94849B;
 }
 
 .dropdown-items {
@@ -27,67 +119,29 @@ main {
 }
 
 .dropdown-btn {
-    background-color: black;
-    color: antiquewhite;
+    background-color: #242423;
+    color: #94849B;
     font-size: xx-large;
     width: 300px;
 }
 
-.dropdown:hover .dropdown-items {display: block;}
-.dropdown:hover .dropdown-btn {background-color: darkgray;}
-.dropdown-items a:hover {background-color: darkgray;}
+.dropdown:hover .dropdown-items {
+    display: block;
+}
 
-.cantrips, .spells{
+.dropdown:hover .dropdown-btn {
+    background-color: #333533;
+}
+
+.dropdown-items a:hover {
+    background-color: #333533;
+}
+
+.cantrips,
+.spells {
     border: solid black 5px;
+    background-color: #333533;
     height: fit-content;
     width: 300px;
     padding: 16px;
 }
-
-.increment {
-    display: block;
-}
-
-.increment-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.attributes-container {
-    display: flex;
-    flex-direction: column;
-    max-width: fit-content;
-  }
-
-.attribute {
-    border: solid black 5px;
-    min-width: fit-content;
-    width: 150px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    border-radius: 20%;
-  }
-
-  .val, .mod {
-    text-align: center;
-  }
-  
-  .mod {
-    border: solid purple 5px;
-    border-radius: 50%;
-    width: fit-content;
-    height: fit-content;
-    padding: 20px;
-    position: relative;
-    top: 35px;
-    margin: 0;
-  }
-  
-  .val {
-    font-size: xx-large;
-    margin-bottom: 0;
-    margin-top: 20px;
-  }
