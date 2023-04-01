@@ -102,7 +102,7 @@ const character = {
         {
             title: "wisdom",
             value: 6,
-            mod: "-2"
+            mod: "- 2"
         },
         {
             title: "charisma",
@@ -208,13 +208,19 @@ dropdownBtn[1].addEventListener('click', (e) => {
 character.attributes.forEach(attribute => {
     let currentAttribute = document.querySelector(`.${attribute.title}`)
     let h4 = document.createElement('h4')
-    currentAttribute.textContent = `${attribute.title.toUpperCase()}: ${attribute.value}`
-    if (attribute.mod[0] === '-') {
-        h4.textContent = `Modifier: ${attribute.mod}`
-    } else {
-        h4.textContent = `Modifier: + ${attribute.mod}`
-    }
+    let h5 = document.createElement('h5')
+    h4.classList.add('val')
+    h5.classList.add('mod')
+    currentAttribute.textContent = attribute.title.toUpperCase()
+    h4.textContent = attribute.value
     currentAttribute.appendChild(h4)
+
+    if (attribute.mod[0] === '-') {
+        h5.textContent = attribute.mod
+    } else {
+        h5.textContent = `+ ${attribute.mod}`
+    }
+    currentAttribute.appendChild(h5)
 })
 
 maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
