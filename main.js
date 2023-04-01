@@ -76,8 +76,8 @@ const character = {
     lvl: 4,
     armorClass: 13,
     speed: 30,
-    maxHP: 33,
     hd: "1d8",
+    maxHP: 33,
     attributes: [
         {
             title: "strength",
@@ -123,6 +123,23 @@ const down = document.querySelector('.down')
 const tempUp = document.querySelector('.temp-up')
 const tempDown = document.querySelector('.temp-down')
 
+const characterName = document.querySelector('.character-name')
+const race = document.querySelector('.race')
+const characterClass = document.querySelector('.character-class')
+const age = document.querySelector('.age')
+const lvl = document.querySelector('.lvl')
+const armorClass = document.querySelector('.armor-class')
+const speed = document.querySelector('.speed')
+const hitDice = document.querySelector('.hit-dice')
+
+characterName.textContent = `Name: ${character.name}`
+race.textContent = `Race: ${character.race}`
+characterClass.textContent = `Class: ${character.characterClass}`
+age.textContent = `Age: ${character.age}`
+lvl.textContent = `Level: ${character.lvl}`
+armorClass.textContent = `AC: ${character.armorClass}`
+speed.textContent = `Speed: ${character.speed}`
+hitDice.textContent = `Hit Dice: ${character.hd}`
 
 const dropdownBtn = document.querySelectorAll('.dropdown-btn')
 const spellName = document.querySelectorAll('.spell-name')
