@@ -105,7 +105,7 @@ main {
 
 .dropdown-items > a {
     text-decoration: none;
-    background-color: #333533;
+    background-color: #242423;
     font-size: x-large;
     padding-left: 10px;
     color: #94849B;
@@ -125,16 +125,16 @@ main {
     width: 300px;
 }
 
-.dropdown:hover .dropdown-items {
-    display: block;
-}
-
 .dropdown:hover .dropdown-btn {
     background-color: #333533;
 }
 
 .dropdown-items a:hover {
     background-color: #333533;
+}
+
+.show {
+    display: block;
 }
 
 .cantrips,

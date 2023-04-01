@@ -199,6 +199,7 @@ for (let i = 0; i < cantrips.length; i++) {
         components[0].textContent = `Components: ${cantrips[i].components}`
         duration[0].textContent = `Duration: ${cantrips[i].duration}`
         description[0].textContent = cantrips[i].description
+        dropdownItems.classList.remove('show')
     })
     dropdownItems.appendChild(a)
 }
@@ -217,28 +218,48 @@ for (let i = 0; i < spells.length; i++) {
         components[1].textContent = `Components: ${spells[i].components}`
         duration[1].textContent = `Duration: ${spells[i].duration}`
         description[1].textContent = spells[i].description
+        spellDropdownItems.classList.remove('show')
     })
     spellDropdownItems.appendChild(a)
 }
 
 dropdownBtn[0].addEventListener('click', (e) => {
-    dropdownBtn[0].textContent = 'Cantrips ▽'
-    spellName[0].textContent = ''
-    castingTime[0].textContent = ''
-    range[0].textContent = ''
-    components[0].textContent = ''
-    duration[0].textContent = ''
-    description[0].textContent = ''
+    if (dropdownBtn[0].textContent === 'Cantrips △') {
+        dropdownBtn[0].textContent = 'Cantrips ▽'
+        spellName[0].textContent = ''
+        castingTime[0].textContent = ''
+        range[0].textContent = ''
+        components[0].textContent = ''
+        duration[0].textContent = ''
+        description[0].textContent = ''
+    } else if (dropdownItems.classList.contains('show')) {
+        dropdownItems.classList.remove('show')
+    } else {
+        dropdownItems.classList.add('show')
+    }
 })
 
 dropdownBtn[1].addEventListener('click', (e) => {
-    dropdownBtn[1].textContent = 'Spells ▽'
-    spellName[1].textContent = ''
-    castingTime[1].textContent = ''
-    range[1].textContent = ''
-    components[1].textContent = ''
-    duration[1].textContent = ''
-    description[1].textContent = ''
+    if (dropdownBtn[1].textContent === 'Spells △') {
+        dropdownBtn[1].textContent = 'Spells ▽'
+        spellName[1].textContent = ''
+        castingTime[1].textContent = ''
+        range[1].textContent = ''
+        components[1].textContent = ''
+        duration[1].textContent = ''
+        description[1].textContent = ''
+    } else if (spellDropdownItems.classList.contains('show')) {
+        spellDropdownItems.classList.remove('show')
+    } else {
+        spellDropdownItems.classList.add('show')
+    }
+})
+
+window.onclick = ((e) => {
+    if (!e.target.matches('.dropdown-btn')) {
+        spellDropdownItems.classList.remove('show')
+        dropdownItems.classList.remove('show')
+    }
 })
 
 character.attributes.forEach(attribute => {
