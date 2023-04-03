@@ -5,6 +5,7 @@
     --peach-yellow: #FFE1A8;
     --redish: #E26D5C;
     --white: #F5F5F5;
+    --purple-ish: #9C7A97;
 }
 
 body {
@@ -30,7 +31,7 @@ main {
     display: flex;
     justify-content: space-around;
     gap: 16px;
-    border: solid black 2px;
+    border: solid var(--charcoal) 2px;
     align-items: center;
     background-color: var(--peach-yellow);
     color: var(--main-bg-color);
@@ -156,14 +157,14 @@ main {
     display: none;
     position: absolute;
     z-index: 1;
-    min-width: 300px;
+    width: 95vw;
 }
 
 .dropdown-btn {
     background-color: var(--main-bg-color);
     color: var(--tealish);
     font-size: xx-large;
-    width: 300px;
+    width: 95vw;
 }
 
 .dropdown:hover .dropdown-btn {
@@ -174,19 +175,56 @@ main {
     background-color: var(--charcoal);
 }
 
-.show {
-    display: block;
-}
 
 .cantrips,
 .spells {
     border: solid var(--tealish) 5px;
     background-color: var(--main-bg-color);
     height: fit-content;
-    width: 300px;
-    padding: 16px;
+    width: 95vw;
+}
+
+.spell-display {
+    margin: 16px;
+    display: none;
 }
 
 button {
     touch-action: none;
+}
+
+.inventory-container, .inventory-header {
+    background-color: var(--purple-ish);
+    border: solid var(--charcoal) 2px;
+    width: 95vw;
+    display: flex;
+}
+
+.inventory-header {
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style-type: disclosure-closed;
+    font-size: x-large;
+    padding: 8px 0px;
+}
+
+.inventory-container {
+    justify-content: space-between;
+}
+
+.inventory-container > h2 {
+    border: solid var(--peach-yellow) 5px;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    margin-right: 20px;
+    color: var(--peach-yellow);
+}
+
+.show {
+    display: block;
 }

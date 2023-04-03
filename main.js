@@ -109,7 +109,9 @@ const character = {
             value: 16,
             mod: "3"
         }
-    ]
+    ],
+    inventory: ["Hatchet", "Magic Ring", "Scroll"],
+    coin: 500
 }
 
 const characterName = document.querySelector('.character-name')
@@ -184,6 +186,7 @@ const range = document.querySelectorAll('.range')
 const components = document.querySelectorAll('.components')
 const duration = document.querySelectorAll('.duration')
 const description = document.querySelectorAll('.description')
+const spellDisplay = document.querySelectorAll('.spell-display')
 
 const dropdownItems = document.querySelector('.dropdown-items')
 
@@ -200,6 +203,7 @@ for (let i = 0; i < cantrips.length; i++) {
         duration[0].textContent = `Duration: ${cantrips[i].duration}`
         description[0].textContent = cantrips[i].description
         dropdownItems.classList.remove('show')
+        spellDisplay[0].classList.add('show')
     })
     dropdownItems.appendChild(a)
 }
@@ -219,6 +223,7 @@ for (let i = 0; i < spells.length; i++) {
         duration[1].textContent = `Duration: ${spells[i].duration}`
         description[1].textContent = spells[i].description
         spellDropdownItems.classList.remove('show')
+        spellDisplay[1].classList.add('show')
     })
     spellDropdownItems.appendChild(a)
 }
@@ -232,6 +237,7 @@ dropdownBtn[0].addEventListener('click', (e) => {
         components[0].textContent = ''
         duration[0].textContent = ''
         description[0].textContent = ''
+        spellDisplay[0].classList.remove('show')
     } else if (dropdownItems.classList.contains('show')) {
         dropdownItems.classList.remove('show')
     } else {
@@ -248,6 +254,7 @@ dropdownBtn[1].addEventListener('click', (e) => {
         components[1].textContent = ''
         duration[1].textContent = ''
         description[1].textContent = ''
+        spellDisplay[1].classList.remove('show')
     } else if (spellDropdownItems.classList.contains('show')) {
         spellDropdownItems.classList.remove('show')
     } else {
@@ -279,3 +286,14 @@ character.attributes.forEach(attribute => {
     }
     currentAttribute.appendChild(h5)
 })
+
+const inventory = document.querySelector('.inventory')
+const gold = document.querySelector('.gold')
+
+character.inventory.forEach(item => {
+    let li = document.createElement('li')
+    li.textContent = item
+    inventory.appendChild(li)
+})
+
+gold.textContent = character.coin
