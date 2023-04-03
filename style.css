@@ -1,6 +1,15 @@
+:root {
+    --main-bg-color : #071108;
+    --charcoal: #364652;
+    --tealish: #28AFB0;
+    --peach-yellow: #FFE1A8;
+    --redish: #E26D5C;
+    --white: #F5F5F5;
+}
+
 body {
-    background-color: #242423;
-    color: #E8EDDF;
+    background-color: var(--main-bg-color);
+    color: var(--white);
 }
 
 main {
@@ -23,23 +32,23 @@ main {
     gap: 16px;
     border: solid black 2px;
     align-items: center;
-    background-color: #F5CB5C;
-    color: #333533;
+    background-color: var(--peach-yellow);
+    color: var(--main-bg-color);
 }
 
 .hp {
-    background-color: #94849B;
+    background-color: var(--redish);
     width: 95vw;
     display: flex;
     flex-direction: column;
-    border: solid black 2px;
-    color: #333533;
+    border: solid var(--charcoal) 2px;
+    color: var(--main-bg-color);
 }
 
 .max-hp {
     align-self: flex-end;
-    border-bottom: solid #333533 3px;
-    border-left: solid #333533 3px;
+    border-bottom: solid var(--main-bg-color) 3px;
+    border-left: solid var(--main-bg-color) 3px;
     padding: 16px;
     margin-top: 0;
 }
@@ -62,7 +71,7 @@ main {
 }
 
 .attribute {
-    border: solid #F5CB5C 5px;
+    border: solid var(--peach-yellow) 5px;
     min-width: fit-content;
     width: 150px;
     height: 180px;
@@ -79,7 +88,7 @@ main {
 }
 
 .mod {
-    border: solid #94849B 5px;
+    border: solid var(--tealish) 5px;
     border-radius: 50%;
     width: fit-content;
     height: fit-content;
@@ -105,10 +114,10 @@ main {
 
 .dropdown-items > a {
     text-decoration: none;
-    background-color: #242423;
+    background-color: var(--main-bg-color);
     font-size: x-large;
     padding-left: 10px;
-    color: #94849B;
+    color: var(--tealish);
 }
 
 .dropdown-items {
@@ -119,18 +128,18 @@ main {
 }
 
 .dropdown-btn {
-    background-color: #242423;
-    color: #94849B;
+    background-color: var(--main-bg-color);
+    color: var(--tealish);
     font-size: xx-large;
     width: 300px;
 }
 
 .dropdown:hover .dropdown-btn {
-    background-color: #333533;
+    background-color: var(--charcoal);
 }
 
 .dropdown-items a:hover {
-    background-color: #333533;
+    background-color: var(--charcoal);
 }
 
 .show {
@@ -139,8 +148,8 @@ main {
 
 .cantrips,
 .spells {
-    border: solid black 5px;
-    background-color: #333533;
+    border: solid var(--tealish) 5px;
+    background-color: var(--main-bg-color);
     height: fit-content;
     width: 300px;
     padding: 16px;
