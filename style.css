@@ -186,3 +186,7 @@ main {
     width: 300px;
     padding: 16px;
 }
+
+button {
+    touch-action: none;
+}
