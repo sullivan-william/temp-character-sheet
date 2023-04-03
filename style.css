@@ -45,8 +45,17 @@ main {
     color: var(--main-bg-color);
 }
 
+.top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.top-left {
+    padding-left: 18px;
+}
+
 .max-hp {
-    align-self: flex-end;
     border-bottom: solid var(--main-bg-color) 3px;
     border-left: solid var(--main-bg-color) 3px;
     padding: 16px;
@@ -55,12 +64,35 @@ main {
 
 .increment {
     display: block;
+    font-size: xx-large;
 }
 
 .increment-container {
     display: flex;
-    justify-content: space-between;
-    padding: 8px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0px;
+    background-color: var(--redish);
+    width: 95vw;
+    border: solid var(--charcoal) 2px;
+    color: var(--main-bg-color);
+}
+
+.current-hp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.current-hp-container > div {
+    position: relative;
+    left: 26vw;
+}
+
+.current-hp {
+    font-size: 80px;
+    margin: 0;
 }
 
 .attributes-container {

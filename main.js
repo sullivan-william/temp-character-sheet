@@ -142,7 +142,7 @@ const tempUp = document.querySelector('.temp-up')
 const tempDown = document.querySelector('.temp-down')
 
 maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
-currentHP.textContent = `Current HP: ${hp}`
+currentHP.textContent = hp
 tempHP.textContent = `Temporary HP: ${bonusHP}`
 
 up.addEventListener('click', (e) => {
@@ -150,14 +150,14 @@ up.addEventListener('click', (e) => {
         return
     } else {
         hp += 1
-        currentHP.textContent = `Current HP: ${hp}`
+        currentHP.textContent = hp
     }
 })
 
 down.addEventListener('click', (e) => {
     if (hp > 0) {
         hp -= 1
-        currentHP.textContent = `Current HP: ${hp}`
+        currentHP.textContent = hp
     } else {
         return
     }
