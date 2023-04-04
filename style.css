@@ -37,65 +37,6 @@ main {
     color: var(--main-bg-color);
 }
 
-.hp {
-    background-color: var(--redish);
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-    border: solid var(--charcoal) 2px;
-    color: var(--main-bg-color);
-}
-
-.top {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.top-left {
-    padding-left: 18px;
-}
-
-.max-hp {
-    border-bottom: solid var(--main-bg-color) 3px;
-    border-left: solid var(--main-bg-color) 3px;
-    padding: 16px;
-    margin-top: 0;
-}
-
-.increment {
-    display: block;
-    font-size: xx-large;
-}
-
-.increment-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 8px 0px;
-    background-color: var(--redish);
-    width: 95vw;
-    border: solid var(--charcoal) 2px;
-    color: var(--main-bg-color);
-}
-
-.current-hp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 8px;
-}
-
-.current-hp-container > div {
-    position: relative;
-    left: 26vw;
-}
-
-.current-hp {
-    font-size: 80px;
-    margin: 0;
-}
-
 .attributes-container {
     display: flex;
     flex-wrap: wrap;
@@ -151,6 +92,7 @@ main {
     font-size: x-large;
     padding-left: 10px;
     color: var(--tealish);
+    border: solid var(--charcoal) 2px;
 }
 
 .dropdown-items {
@@ -227,4 +169,82 @@ li {
 
 .show {
     display: block;
+}
+
+.increment {
+    display: block;
+    font-size: xx-large;
+    width: 40px;
+    height: 40px;
+}
+
+.increment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.up, .down {
+    background-color: var(--redish);
+}
+
+.temp-up, .temp-down {
+    background-color: var(--peach-yellow);
+}
+
+#heart { 
+    position: relative;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 8px;
+} 
+
+#heart:before, #heart:after { 
+    position: absolute; 
+    content: ""; 
+    left: 60px; 
+    top: 20px; 
+    width: 60px; 
+    height: 90px; 
+    border-top: solid var(--redish) 3px;
+    border-radius: 50px 50px 0 0; 
+    transform: rotate(-45deg); 
+    transform-origin: 0 100%; 
+} 
+
+#heart:after { 
+    left: 0px; 
+    transform: rotate(45deg); 
+    transform-origin :100% 100%;
+    border-right: solid var(--redish) 3px;
+}
+
+#heart:before {
+    border-left: solid var(--redish) 3px;
+}
+
+.health-container {
+    border: solid var(--redish) 2px;
+    width: 95vw;
+    background-color: var(--charcoal);
+    display: flex;
+    justify-content: space-between;
+}
+
+.health-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 16px;
+}
+
+.current-hp {
+    position: relative;
+    bottom: 30px;
+}
+
+.temp-hp {
+    color: var(--peach-yellow);
 }

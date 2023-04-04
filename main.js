@@ -143,7 +143,7 @@ const down = document.querySelector('.down')
 const tempUp = document.querySelector('.temp-up')
 const tempDown = document.querySelector('.temp-down')
 
-maxHP.textContent = `Maximum Hit Points: ${character.maxHP}`
+maxHP.textContent = `Max HP: ${character.maxHP}`
 currentHP.textContent = hp
 tempHP.textContent = `Temporary HP: ${bonusHP}`
 
