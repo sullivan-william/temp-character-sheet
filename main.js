@@ -287,6 +287,17 @@ character.attributes.forEach(attribute => {
     currentAttribute.appendChild(h5)
 })
 
+const inspiration = document.querySelector('#inspo-status')
+const inspoSwitch = document.querySelector('#inspo-switch')
+
+inspoSwitch.addEventListener('click', (e) => {
+    if (inspoSwitch.checked) {
+        inspiration.classList.remove('unchecked')
+    } else {
+        inspiration.classList.add('unchecked')
+    }
+})
+
 const inventory = document.querySelector('.inventory')
 const gold = document.querySelector('.gold')
 
