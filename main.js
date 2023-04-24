@@ -79,6 +79,7 @@ const character = {
     hd: "1d8",
     maxHP: 33,
     proficiency: 3,
+    savingThrows: ["Wisdom", "Charisma"],
     attributes: [
         {
             title: "strength",
@@ -301,6 +302,14 @@ inspoSwitch.addEventListener('click', (e) => {
 
 const proficiency = document.querySelector('#proficiency-bonus')
 proficiency.textContent = `+${character.proficiency}`
+
+const savingThrows = document.querySelector('#saving-throws')
+
+character.savingThrows.forEach(savingThrow => {
+    let h2 = document.createElement('h2')
+    h2.textContent = savingThrow
+    savingThrows.appendChild(h2)
+})
 
 const inventory = document.querySelector('.inventory')
 const gold = document.querySelector('.gold')
