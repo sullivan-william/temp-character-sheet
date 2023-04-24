@@ -28,23 +28,39 @@
             </div>
         </div>
 
-        <div class="health-container">
-            <div class="health-title">
-                <div>
-                    <h1>Health</h1>
-                    <h3 class="max-hp"></h3>
+        <div id="health-header">
+            <h1>Health</h1>
+            <h4 class="max-hp"></h4>
+        </div>
+
+        <div id="health-container">
+            <div id="hp-left">
+                <div id="current-hp-container">
+                    <svg id="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>heart</title>
+                        <path
+                            d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
+                    </svg>
+                    <h1 class="hp"></h1>
                 </div>
-                <h3 class="temp-hp"></h3>
-            </div>
-            <div id="heart">
-                <h1 class="current-hp"></h1>
-            </div>
-            <div class="increment-container">
-                <div>
-                    <button class="increment up">+</button><button class="increment down">-</button>
+                <div class="increment-container">
+                    <div>
+                        <button class="increment up">+</button><button class="increment down">-</button>
+                    </div>
                 </div>
-                <div>
-                    <button class="increment temp-up">+</button><button class="increment temp-down">-</button>
+            </div>
+            <div id="hp-right">
+                <div id="temp-hp-container">
+                    <svg id="shield-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>shield</title>
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" />
+                    </svg>
+                    <h1 class="temp-hp"></h1>
+                </div>
+                <div class="increment-container">
+                    <div>
+                        <button class="increment temp-up">+</button><button class="increment temp-down">-</button>
+                    </div>
                 </div>
             </div>
         </div>

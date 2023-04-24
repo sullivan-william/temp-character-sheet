@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color : #071108;
+    --main-bg-color: #071108;
     --charcoal: #364652;
     --tealish: #28AFB0;
     --peach-yellow: #FFE1A8;
@@ -27,7 +27,7 @@ main {
     gap: 8px;
 }
 
-.general > div {
+.general>div {
     display: flex;
     justify-content: space-around;
     gap: 16px;
@@ -86,7 +86,7 @@ main {
     display: block;
 }
 
-.dropdown-items > a {
+.dropdown-items>a {
     text-decoration: none;
     background-color: var(--main-bg-color);
     font-size: x-large;
@@ -135,7 +135,8 @@ button {
     touch-action: none;
 }
 
-.inventory-container, .inventory-header {
+.inventory-container,
+.inventory-header {
     background-color: var(--purple-ish);
     border: solid var(--charcoal) 2px;
     width: 95vw;
@@ -157,7 +158,7 @@ li {
     justify-content: space-between;
 }
 
-.inventory-container > h2 {
+.inventory-container>h2 {
     border: solid var(--peach-yellow) 5px;
     border-radius: 50%;
     width: fit-content;
@@ -169,6 +170,61 @@ li {
 
 .show {
     display: block;
+}
+
+#health-header {
+    background-color: var(--redish);
+    border: 2px solid var(--charcoal);
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.max-hp {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+#health-container {
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 150px;
+    color: var(--main-bg-color);
+    border-bottom: 10px double var(--redish);
+}
+
+#hp-left, #hp-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#current-hp-container, #temp-hp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#heart-icon, #shield-icon {
+    width: 30vw;
+    position: relative;
+}
+
+#heart-icon {
+    fill: var(--redish);
+}
+
+#shield-icon {
+    fill: var(--peach-yellow);
+}
+
+.hp, .temp-hp {
+    position: absolute;
 }
 
 .increment {
@@ -184,67 +240,12 @@ li {
     justify-content: space-between;
 }
 
-.up, .down {
+.up,
+.down {
     background-color: var(--redish);
 }
 
-.temp-up, .temp-down {
+.temp-up,
+.temp-down {
     background-color: var(--peach-yellow);
-}
-
-#heart { 
-    position: relative;
-    width: 30vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 8px;
-} 
-
-#heart:before, #heart:after { 
-    position: absolute; 
-    content: ""; 
-    left: 60px; 
-    top: 20px; 
-    width: 60px; 
-    height: 90px; 
-    border-top: solid var(--redish) 3px;
-    border-radius: 50px 50px 0 0; 
-    transform: rotate(-45deg); 
-    transform-origin: 0 100%; 
-} 
-
-#heart:after { 
-    left: 0px; 
-    transform: rotate(45deg); 
-    transform-origin :100% 100%;
-    border-right: solid var(--redish) 3px;
-}
-
-#heart:before {
-    border-left: solid var(--redish) 3px;
-}
-
-.health-container {
-    border: solid var(--redish) 2px;
-    width: 95vw;
-    background-color: var(--charcoal);
-    display: flex;
-    justify-content: space-between;
-}
-
-.health-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 16px;
-}
-
-.current-hp {
-    position: relative;
-    bottom: 30px;
-}
-
-.temp-hp {
-    color: var(--peach-yellow);
 }
