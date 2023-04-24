@@ -78,6 +78,7 @@ const character = {
     speed: 30,
     hd: "1d8",
     maxHP: 33,
+    proficiency: 3,
     attributes: [
         {
             title: "strength",
@@ -297,6 +298,9 @@ inspoSwitch.addEventListener('click', (e) => {
         inspiration.classList.add('unchecked')
     }
 })
+
+const proficiency = document.querySelector('#proficiency-bonus')
+proficiency.textContent = `+${character.proficiency}`
 
 const inventory = document.querySelector('.inventory')
 const gold = document.querySelector('.gold')

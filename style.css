@@ -305,6 +305,12 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
+#skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 #skills-container > div {
     background-color: var(--peach-yellow);
     border: 2px solid var(--charcoal);
@@ -321,4 +327,17 @@ input:checked+.slider:before {
 
 .unchecked {
     opacity: 25%;
+}
+
+#proficiency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+#proficiency-bonus {
+    border: 5px solid var(--tealish);
+    border-radius: 50%;
+    padding: 10px;
 }
