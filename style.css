@@ -119,14 +119,16 @@ main {
 
 
 .cantrips,
-.spells {
+.spells,
+.traits {
     border: solid var(--tealish) 5px;
     background-color: var(--main-bg-color);
     height: fit-content;
     width: 95vw;
 }
 
-.spell-display {
+.spell-display,
+.traits-display {
     margin: 16px;
     display: none;
 }
@@ -350,4 +352,19 @@ input:checked+.slider:before {
 
 #saving-throws > h1 {
     border-bottom: 10px double var(--charcoal);
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#skills > h1 {
+    align-self: center;
+}
+
+#skills > div {
+    padding-left: 10px;
+    padding-bottom: 10px;
 }

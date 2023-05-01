@@ -68,6 +68,13 @@ const spells = [
     }
 ]
 
+const traits = [
+    {
+        name: "Fiendish Vigor",
+        description: "You can cast false life on yourself at will as a 1st-level spell, without expending a spell slot or material components."
+    }
+]
+
 const character = {
     name: "Guy",
     race: "Human",
@@ -112,8 +119,8 @@ const character = {
             mod: "3"
         }
     ],
-    inventory: ["Hatchet", "Magic Ring", "Scroll"],
-    coin: 500
+    inventory: ["Studded leather armor", "2 daggers", "Hatchet", "Dungeoneer's pack", "Dr. Whizz's Pop Rocks", "Ring of water walking", "Gold trophy"],
+    coin: 555
 }
 
 const characterName = document.querySelector('.character-name')
@@ -230,6 +237,22 @@ for (let i = 0; i < spells.length; i++) {
     spellDropdownItems.appendChild(a)
 }
 
+const traitName = document.querySelector('.trait-name')
+const traitDisplay = document.querySelector('.traits-display')
+const traitDropdownItems = document.querySelectorAll('.dropdown-items')[2]
+
+for (let i = 0; i < traits.length; i++) {
+    let a = document.createElement('a')
+    a.classList.add(`trait-${i}`)
+    a.textContent = traits[i].name
+    a.addEventListener('click', (e) => {
+        dropdownBtn[2].textContent = 'Traits △'
+        traitName.textContent = traits[i].name
+        description[2].textContent = traits[i].description
+    })
+    traitDropdownItems.appendChild(a)
+}
+
 dropdownBtn[0].addEventListener('click', (e) => {
     if (dropdownBtn[0].textContent === 'Cantrips △') {
         dropdownBtn[0].textContent = 'Cantrips ▽'
@@ -264,10 +287,23 @@ dropdownBtn[1].addEventListener('click', (e) => {
     }
 })
 
+dropdownBtn[2].addEventListener('click', (e) => {
+    if (dropdownBtn[2].textContent === 'Traits △') {
+        traitName.textContent = ''
+        description[2].textContent = ''
+        traitDisplay.classList.remove('show')
+    } else if (traitDropdownItems.classList.contains('show')) {
+        traitDropdownItems.classList.remove('show')
+    } else {
+        traitDropdownItems.classList.add('show')
+    }
+})
+
 window.onclick = ((e) => {
     if (!e.target.matches('.dropdown-btn')) {
         spellDropdownItems.classList.remove('show')
         dropdownItems.classList.remove('show')
+        traitDropdownItems.classList.remove('show')
     }
 })
 
